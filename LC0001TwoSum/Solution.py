@@ -32,15 +32,18 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 """
 
+class Solution:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        hashmap = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hashmap:
+                return [i, hashmap[complement]]
+            hashmap[nums[i]] = i
 
-def twoSum(nums: list[int], target: int) -> list[int]:
-    hashmap = {}
-    for i in range(len(nums)):
-        complement = target - nums[i]
-        if complement in hashmap:
-            return [i, hashmap[complement]]
-        hashmap[nums[i]] = i
+    def run(self):
+        print(self.twoSum([2, 7, 11, 15], 9))
 
 
-print(twoSum([2, 7, 11, 15], 9))
-
+if __name__ == "__main__":
+    Solution().run()

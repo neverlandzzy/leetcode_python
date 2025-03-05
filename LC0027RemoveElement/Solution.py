@@ -47,9 +47,11 @@ Constraints:
 0 <= val <= 100
 """
 
+from typing import List
 
-class Solution(object):
-    def removeElement(self, nums, val):
+
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
         """
         :type nums: List[int]
         :type val: int
@@ -66,20 +68,19 @@ class Solution(object):
         return i
 
 
-def main():
-    nums1 = [3, 2, 2, 3]
-    val1 = 3
+    def run(self):
+        nums1 = [3, 2, 2, 3]
+        val1 = 3
 
-    nums2 = [0, 1, 2, 2, 3, 0, 4, 2]
-    val2 = 2
+        nums2 = [0, 1, 2, 2, 3, 0, 4, 2]
+        val2 = 2
 
-    solution = Solution()
-    k1 = solution.removeElement(nums1, val1)
-    k2 = solution.removeElement(nums2, val2)
-    print(f"k1 = {k1}, nums1 = {nums1}")
-    print(f"k2 = {k2}, nums2 = {nums2}")
-
+        k1 = self.removeElement(nums1, val1)
+        k2 = self.removeElement(nums2, val2)
+        print(f"k1 = {k1}, nums1 = {nums1}")
+        print(f"k2 = {k2}, nums2 = {nums2}")
 
 
-if __name__ == '__main__':
-    main()
+
+if __name__ == "__main__":
+    Solution().run()
