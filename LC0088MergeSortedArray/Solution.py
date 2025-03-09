@@ -37,15 +37,13 @@ nums2.length == n
 -10^9 <= nums1[i], nums2[j] <= 10^9
 """
 
+from typing import List
 
-class Solution(object):
-    def merge(self, nums1, m, nums2, n):
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
-        :type nums1: List[int]
-        :type m: int
-        :type nums2: List[int]
-        :type n: int
-        :rtype: None Do not return anything, modify nums1 in-place instead.
+        Do not return anything, modify nums1 in-place instead.
         """
         i = m - 1
         j = n - 1
@@ -72,31 +70,30 @@ class Solution(object):
             index -= 1
 
 
-def main():
-    nums11 = [1, 2, 3, 0, 0, 0]
-    m1 = 3
-    nums12 = [2, 5, 6]
-    n1 = 3
+    def run(self):
+        nums11 = [1, 2, 3, 0, 0, 0]
+        m1 = 3
+        nums12 = [2, 5, 6]
+        n1 = 3
 
-    nums21 = [1]
-    m2 = 1
-    nums22 = []
-    n2 = 0
+        nums21 = [1]
+        m2 = 1
+        nums22 = []
+        n2 = 0
 
-    nums31 = [0]
-    m3 = 0
-    nums32 = [1]
-    n3 = 1
+        nums31 = [0]
+        m3 = 0
+        nums32 = [1]
+        n3 = 1
+        self.merge(nums11, m1, nums12, n1)
+        self.merge(nums21, m2, nums22, n2)
+        self.merge(nums31, m3, nums32, n3)
 
-    solution = Solution()
-    solution.merge(nums11, m1, nums12, n1)
-    solution.merge(nums21, m2, nums22, n2)
-    solution.merge(nums31, m3, nums32, n3)
-
-    print("Merged array nums11:", nums11)
-    print("Merged array nums21", nums21)
-    print("Merged array nums31:", nums31)
+        print("Merged array nums11:", nums11)
+        print("Merged array nums21", nums21)
+        print("Merged array nums31:", nums31)
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    Solution().run()
+
